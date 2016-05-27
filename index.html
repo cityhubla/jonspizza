@@ -1,0 +1,36 @@
+<html>
+<head>
+  <title>The great LA Pizza Map</title>
+  <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.css"/>
+  <script src="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.js"></script>
+  <style>
+      body {
+        background:black  
+      }
+    #party{ 
+        height: 100% }
+  </style>
+</head>
+<body>
+
+  <div id="party"></div>
+
+  <script>
+
+  // initialize the map
+  var map = L.map('party').setView([34.052234, -118.243685], 13);
+
+  // load a tile layer
+var OpenStreetMap_Mapnik = L.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+	maxZoom: 19,
+	attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>',
+}).addTo(map);  
+      
+var juicemarker = L.circle([34.052234,-118.243685],500,{
+    color:'orange'
+}).addTo(map).bindPopup("<p>Come to Jon's Pizza</p><p>Becuase itza very good!!</p>");
+      
+  </script>
+</body>
+</html>
+	
